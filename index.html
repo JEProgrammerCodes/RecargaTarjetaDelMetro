@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recarga y Gestión de Tarjetas del Metro</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Recarga y Gestión de Tarjetas del Metro</h1>
+        <p>Gestiona y verifica el saldo de tu tarjeta del metro en línea.</p>
+        <!-- Botón de cerrar sesión -->
+         <br>
+        <button id="logout-button" style="display:none;">Cerrar Sesión</button>
+    </header>
+
+    <main>
+        <!-- Sección de login -->
+        <section id="login-section">
+            <h2>Iniciar Sesión</h2>
+            <form id="login-form">
+                <label for="login-usuario">Usuario:</label>
+                <input type="text" id="login-usuario" name="login-usuario" required>
+                
+                <label for="login-password">Contraseña:</label>
+                <input type="password" id="login-password" name="login-password" required>
+                
+                <br><br>
+                <button type="submit">Iniciar Sesión</button>
+                <br><br>
+                <p id="login-error" style="color: red;"></p>
+            </form>
+            <p>¿No tienes cuenta? <a href="#" id="go-to-register">Regístrate aquí</a></p>
+        </section>
+
+        <!-- Sección de registro -->
+        <section id="register-section" style="display:none;">
+            <h2>Registrarse</h2>
+            <form id="register-form">
+                <label for="register-usuario">Usuario:</label>
+                <input type="text" id="register-usuario" name="register-usuario" required>
+                
+                <label for="register-password">Contraseña:</label>
+                <input type="password" id="register-password" name="register-password" required>
+                
+                <br><br>
+                <button type="submit">Registrarse</button>
+                <br><br>
+                <p id="register-error" style="color: red;"></p>
+            </form>
+            <p>¿Ya tienes cuenta? <a href="#" id="go-to-login">Inicia sesión aquí</a></p>
+        </section>
+
+        <!-- Sección de verificación de saldo -->
+        <section id="verificar-saldo-form" style="display:none;">
+            <h2>Verifica el Saldo de tu Tarjeta</h2>
+            <form id="form-verificar-saldo">
+                <label for="verificar-numero-tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="verificar-numero-tarjeta" name="verificar-numero-tarjeta" required>
+                <br><br>
+                <button type="submit">Verificar Saldo</button>
+            </form>
+            <div id="resultado-verificacion"></div>
+        </section>
+
+        <!-- Sección de recarga -->
+        <section id="recarga-form" style="display:none;">
+            <h2>Recarga tu Tarjeta</h2>
+            <form id="form-recarga">
+                <label for="numero-tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="numero-tarjeta" name="numero-tarjeta" required>
+                
+                <label for="monto">Monto a Recargar:</label>
+                <input type="number" id="monto" name="monto" required>
+                
+                <br><br>
+                <button type="submit">Recargar</button>
+            </form>
+            <div id="resultado-recarga"></div>
+        </section>
+
+        <!-- Sección de bloqueo de tarjeta -->
+        <section id="bloquear-tarjeta-form" style="display:none;">
+            <h2>Bloquear Tarjeta Perdida</h2>
+            <form id="form-bloquear-tarjeta">
+                <label for="id-tarjeta-perdida">ID de la Tarjeta Perdida:</label>
+                <input type="text" id="id-tarjeta-perdida" name="id-tarjeta-perdida" required>
+                
+                <label for="nueva-tarjeta">Número de la Nueva Tarjeta:</label>
+                <input type="text" id="nueva-tarjeta" name="nueva-tarjeta" required>
+                
+                <br><br>
+                <button type="submit">Bloquear y Recuperar Saldo</button>
+            </form>
+            <div id="resultado-bloqueo"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Página creada por Johan Espinosa. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
